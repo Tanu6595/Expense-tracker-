@@ -1,128 +1,84 @@
-import React, { useState } from "react";
-import "./App.css"; 
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Login from "./components/Login"; // Import Login component
+import SignUp from "./components/SignUp"; // Import SignUp component
+import "./App.css"; // Import the CSS for the App
 
 function App() {
-  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
-  const [isLoginMode, setIsLoginMode] = useState(true);
-
-  const toggleAuthModal = () => {
-    setIsAuthModalOpen(!isAuthModalOpen);
-  };
-
-  const switchAuthMode = () => {
-    setIsLoginMode(!isLoginMode);
-  };
-
   return (
-    <div className="container">
-      
-      <header className="navbar">
-        <div className="logo">
-          <h1>Expense Tracker</h1>
-        </div>
-        <div className="auth-links">
-          <button className="btn small-btn" onClick={toggleAuthModal}>
-            Login
-          </button>
-          <button className="btn small-btn" onClick={toggleAuthModal}>
-            Sign Up
-          </button>
-        </div>
-      </header>
+    <Router>
+      <div className="hero-container">
+        {/* Conditionally render Navbar based on route */}
+        <ConditionalNavbar />
+        {/* Define Routes */}
+        <Routes>
+          {/* Default Welcome Page */}
+          <Route
+            path="/"
+            element={
+              <main className="hero-section">
+                <div className="hero-text">
+                  <h1>
+                    Manage Your Expenses Easily With <span className="highlight">MoneyMap</span>
+                  </h1>
+                  <p>
+                    We provide the easiest way to manage expenses. Get a full view so you know where to save.
+                    Track spending, detect fraud, and keep tabs on rising subscription costs.
+                  </p>
+                  <Link to="/sign-up" className="get-started">
+                    Sign Up
+                  </Link>
+                </div>
+                <div className="hero-graphics">
+                  <div className="grid-item">
+                    <video
+                      src="./assets/gif4.mp4"
+                      autoPlay
+                      loop
+                      muted
+                      className="graphic"
+                    ></video>
+                  </div>
+                  <div className="grid-item">
+                    <video
+                      src="./assets/gif5.mp4"
+                      autoPlay
+                      loop
+                      muted
+                      className="graphic"
+                    ></video>
+                  </div>
+                </div>
+              </main>
+            }
+          />
+          {/* Login Page */}
+          <Route path="/login" element={<Login />} />
+          {/* Sign Up Page */}
+          <Route path="/sign-up" element={<SignUp />} />
+        </Routes>
+      </div>
+    </Router>
+  );
+}
 
-      
-      {isAuthModalOpen && (
-        <div className="auth-modal">
-          <div className="auth-box">
-            <h2>{isLoginMode ? "Login" : "Sign Up"}</h2>
-            <form className="auth-form">
-              <div className="input-group">
-                <label htmlFor="email">Email</label>
-                <input type="email" id="email" placeholder="Enter your email" required />
-              </div>
-              <div className="input-group">
-                <label htmlFor="password">Password</label>
-                <input type="password" id="password" placeholder="Enter your password" required />
-              </div>
-              <button type="submit" className="btn primary-btn">
-                {isLoginMode ? "Login" : "Sign Up"}
-              </button>
-            </form>
-            <p className="switch-text">
-              {isLoginMode ? "Don't have an account?" : "Already have an account?"}{" "}
-              <a href="#" onClick={switchAuthMode}>
-                {isLoginMode ? "Sign Up" : "Login"}
-              </a>
-            </p>
-            <button className="btn close-btn" onClick={toggleAuthModal}>
-              &times;
-            </button>
-          </div>
-        </div>
-      )}
-
-      
-      <aside className="sidebar">
-        <div className="profile">
-          <h3>ABC</h3>
-          <p>Your Money</p>
-        </div>
-        <nav className="nav-links">
-          <a href="#" className="active">
-            Dashboard
-          </a>
-          <a href="#">View Transactions</a>
-          <a href="#">Incomes</a>
-          <a href="#">Expenses</a>
-        </nav>
-        <button className="signout-btn">Sign Out</button>
-      </aside>
-
-      
-      <main className="content">
-        <h2>Incomes</h2>
-        <div className="total-income">
-          Total Income: <span className="income-amount">$***</span>
-        </div>
-        <div className="form-section">
-          <form className="income-form">
-            <input type="text" placeholder="Salary Title" />
-            <input type="number" placeholder="Salary Amount" />
-            <input type="date" />
-            <select>
-              <option>Select Option</option>
-              <option>Freelance</option>
-              <option>Shopify</option>
-              <option>Youtube</option>
-            </select>
-            <textarea placeholder="Add a Reference"></textarea>
-            <button type="submit" className="btn primary-btn">
-              + Add Income
-            </button>
-          </form>
-        </div>
-        <div className="income-list">
-          <div className="income-item">
-            <div className="icon globe"></div>
-            <div className="details">
-              <h4>From Freelance</h4>
-              <p>$1300 - 25/02/2023</p>
-              <small>From freelance works.</small>
-            </div>
-            <button className="delete-btn">&times;</button>
-          </div>
-          <div className="income-item">
-            <div className="icon shopify"></div>
-            <div className="details">
-              <h4>Shopify</h4>
-              <p>$8000 - 21/02/2023</p>
-              <small>My January Shopify earnings.</small>
-            </div>
-            <button className="delete-btn">&times;</button>
-          </div>
-        </div>
-      </main>
-    </div>
+/**
+ * Component to conditionally render the Navbar.
+ */
+function ConditionalNavbar() {
+  return (
+    <header className="navbar">
+      <div className="logo-container">
+        <img src="./assets/logo.png" alt="App Logo" className="logo" />
+        <h1 className="brand-name">MoneyMap</h1>
+      </div>
+      <nav>
+        <ul className="nav-links">
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/login" className="login-link">Log In</Link></li>
+        </ul>
+      </nav>
+    </header>
   );
 }
 
