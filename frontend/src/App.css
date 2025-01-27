@@ -29,10 +29,13 @@ body {
 .logo {
   height: 40px;
   margin-right: 10px;
+  
 }
 
 .brand-name {
   font-size: 1.5rem;
+  color: #fff;
+  margin-top: 30px;
 }
 
 .nav-links {
