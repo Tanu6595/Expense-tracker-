@@ -2,7 +2,7 @@ import User from "../model/userSchema.js";
 
 export const getAllUsers = async (req, res) => {
     try {
-         
+
         const users = await User.find({});
         console.log("Users retrieved:", users);
         if (users.length > 0) {
@@ -11,8 +11,8 @@ export const getAllUsers = async (req, res) => {
             return res.status(404).json({ message: "we don't have users" });
         }
     } catch (error) {
-        console.log("getting error while GET Method:");
-         
+        console.log("getting error while GET Method:"); 
+                
     }
 };
 
