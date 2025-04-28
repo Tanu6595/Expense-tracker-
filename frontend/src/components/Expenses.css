@@ -1,0 +1,235 @@
+/* Expenses.css */
+
+/* Main Container */
+.expenses-container {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  background: #ffebee; /* Light red/pink background */
+  overflow: hidden;
+}
+
+/* Sidebar Styling */
+.expenses-container .sidebar {
+  width: 250px;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  flex-shrink: 0;
+  overflow-y: auto;
+}
+
+/* Profile Section */
+.expenses-container .profile-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.expenses-container .profile-avatar {
+  width: 40px;
+  height: 40px;
+  background-color: #ffe0b2; /* Light orange */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ff9800; /* Orange */
+}
+
+.expenses-container .profile-info h2 {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 2px;
+}
+
+.expenses-container .profile-info p {
+  font-size: 0.7rem;
+  color: #777;
+  margin: 0;
+}
+
+/* Dashboard Navigation */
+.expenses-container .dashboard-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-grow: 1;
+  padding-top: 10px;
+  overflow-y: auto;
+}
+
+.expenses-container .dashboard-nav a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #555;
+  text-decoration: none;
+  padding: 8px 15px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.expenses-container .dashboard-nav a:hover,
+.expenses-container .dashboard-nav a.active {
+  color: #d32f2f; /* Dark red */
+  background-color: #ffcdd2; /* Light red background */
+  font-weight: 500;
+}
+
+/* Sign Out Button */
+.expenses-container .sign-out-button {
+  padding-top: 20px;
+  padding-left: 15px;
+}
+
+.expenses-container .sign-out-button button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #d32f2f;
+  background: none;
+  border: none;
+  padding: 8px 0;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.expenses-container .sign-out-button button:hover {
+  color: #f44336;
+}
+
+/* Main Content */
+.expenses-container .main-content {
+  flex-grow: 1;
+  padding: 30px 40px;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffcdd2; /* Light red */
+  overflow-y: auto;
+}
+
+.expenses-container .main-content h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #d32f2f; /* Dark red */
+  margin-bottom: 10px;
+  border-bottom: 2px solid #ef9a9a;
+  padding-bottom: 8px;
+}
+
+/* Expense Form and List Containers */
+.expense-form-container,
+.expense-list-container {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  margin-bottom: 20px;
+}
+
+.expense-form-container h2,
+.expense-list-container h2 {
+  font-size: 1.3rem;
+  color: #d32f2f;
+  margin-bottom: 15px;
+}
+
+/* Form Fields */
+.expense-form-container .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.expense-form-container .form-group label {
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.expense-form-container .form-group input[type="text"],
+.expense-form-container .form-group input[type="number"],
+.expense-form-container .form-group input[type="date"],
+.expense-form-container .form-group textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+}
+
+.expense-form-container textarea {
+  resize: vertical;
+}
+
+/* Submit Button */
+.expense-form-container button {
+  background-color: #d32f2f; /* Dark red */
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.expense-form-container button:hover {
+  background-color: #b71c1c;
+}
+
+/* Expense List */
+.expense-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.expense-item {
+  padding: 15px;
+  border: 1px solid #b53410;
+  border-radius: 8px;
+  background-color: #ffcdd2; /* Light red */
+}
+
+.expense-details p {
+  margin: 3px 0;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+/* Messages */
+.error-message {
+  color: #d32f2f;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.success-message {
+  color: #388e3c;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .expenses-container .main-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .expense-form-container,
+  .expense-list-container {
+    width: 100%;
+  }
+}
+
+/* Additional custom styles for expenses can go here */
