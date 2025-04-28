@@ -1,0 +1,164 @@
+/* General Styling */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #000; /* Black background */
+  color: #fff; /* White text */
+}
+
+/* Hero Container */
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.brand-name {
+  font-size: 1.5rem;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+.nav-links li {
+  margin-left: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+.login-link {
+  color: #00bcd4; /* Highlight for login link */
+}
+
+/* Hero Section */
+.hero-section {
+  display: flex;
+  flex: 1;
+  padding: 2rem;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+/* Hero Text */
+.hero-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 300px;
+}
+
+.hero-text .highlight {
+  color: #ff4081; /* Highlight color for MoneyMap */
+}
+
+.get-started {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  color: #fff;
+  background: linear-gradient(90deg, #00bcd4, #ff4081);
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Hero Graphics */
+.hero-graphics {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  justify-items: center;
+  align-items: center;
+  min-width: 300px;
+}
+
+.graphic {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero-section {
+    flex-direction: column;
+  }
+
+  .hero-text {
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-graphics {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem;
+  }
+
+  .brand-name {
+    font-size: 1.2rem;
+  }
+
+  .get-started {
+    font-size: 0.9rem;
+  }
+
+  .graphic {
+    max-height: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-text {
+    padding: 1rem;
+  }
+
+  .hero-graphics {
+    gap: 0.5rem;
+  }
+
+  .graphic {
+    max-height: 100px;
+  }
+}

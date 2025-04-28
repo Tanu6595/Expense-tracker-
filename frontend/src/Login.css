@@ -1,0 +1,96 @@
+/* General body styling */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #7091a0; /* Light blue background */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100vh; /* Full viewport height */
+}
+
+/* Login container styling */
+.login-container {
+  background-color: #c4b0b0; /* White background for the box */
+  padding: 40px; /* Internal padding */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  width: 350px; /* Fixed width */
+  text-align: center; /* Center align content */
+  border: 1px solid #dcdcdc; /* Light border for definition */
+}
+
+/* Title styling */
+h1 {
+  margin-bottom: 30px; /* Space below the title */
+  color: #333; /* Dark gray color */
+  font-size: 28px; /* Large font size */
+}
+
+/* Login form styling */
+.login-form {
+  display: flex;
+  flex-direction: column; /* Stack inputs vertically */
+}
+
+/* Label styling */
+label {
+  margin-bottom: 10px; /* Space below the label */
+  font-size: 16px; /* Standard font size */
+  font-weight: 600; /* Semi-bold text */
+  color: #555; /* Medium gray color */
+  text-align: left; /* Align labels to the left */
+}
+
+/* Input field styling */
+input {
+  padding: 14px; /* Internal padding */
+  margin-bottom: 20px; /* Space below the input */
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 8px; /* Rounded corners */
+  font-size: 16px; /* Standard font size */
+  transition: border-color 0.3s ease; /* Smooth focus transition */
+}
+
+/* Input field focus effect */
+input:focus {
+  border-color: #4CAF50; /* Green border on focus */
+  outline: none; /* Remove default focus outline */
+}
+
+/* Button styling */
+button {
+  padding: 14px; /* Internal padding */
+  background-color: #4CAF50; /* Green background */
+  color: white; /* White text */
+  border: none; /* No border */
+  border-radius: 8px; /* Rounded corners */
+  font-size: 18px; /* Slightly larger font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effects */
+}
+
+/* Button hover effect */
+button:hover {
+  background-color: #45a049; /* Darker green on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Button active effect */
+button:active {
+  transform: translateY(0); /* Reset lift effect */
+}
+
+/* Remove button outline on focus */
+button:focus {
+  outline: none; /* No default outline */
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 480px) {
+  .login-container {
+    width: 90%; /* Take up 90% width of the screen */
+    padding: 25px; /* Reduced padding for smaller screens */
+  }
+}
